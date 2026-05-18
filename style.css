@@ -1,0 +1,366 @@
+/* Variables de base - Palette élégante pour montres de luxe */
+:root {
+    --primary-color: #0a1628;        /* Bleu marine très foncé */
+    --secondary-color: #1e3a5f;      /* Bleu marine moyen */
+    --accent-color: #c9a84c;         /* Or pour contraste élégant */
+    --light-color: #e8eef4;          /* Bleu très clair */
+    --cream: #f0f4f8;                /* Fond légèrement bleuté */
+    --golden: #c9a84c;               /* Or */
+    --shadow: 0 4px 6px rgba(10, 22, 40, 0.2);
+    --transition: all 0.3s ease;
+}
+
+/* Reset et base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    background-color: var(--cream);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(30, 58, 95, 0.08) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(201, 168, 76, 0.08) 0%, transparent 20%);
+}
+
+/* Header */
+header {
+    background: rgba(10, 22, 40, 0.97);
+    padding: 1.5rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(10, 22, 40, 0.4);
+    backdrop-filter: blur(5px);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #b0c4de;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(10, 22, 40, 0.7), rgba(10, 22, 40, 0.7)), url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow:
+        3px 3px 0 #0a1628,
+        6px 6px 0 rgba(10, 22, 40, 0.5);
+    color: #c9a84c;
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(45deg, rgba(201, 168, 76, 0.8), rgba(180, 140, 50, 0.8));
+    border-radius: 4px;
+    z-index: -1;
+    transform: skew(-15deg);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow:
+        2px 2px 0 #000,
+        4px 4px 0 rgba(0, 0, 0, 0.5);
+    color: #c9a84c;
+    font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    background: #1e3a5f;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #c9a84c;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #c9a84c;
+    color: #0a1628;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(201, 168, 76, 0.4);
+}
+
+/* Sections */
+.section {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #0a1628;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #c9a84c;
+    margin: 1rem auto;
+}
+
+/* Galerie de montres */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.montre {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(10, 22, 40, 0.1);
+    border-top: 4px solid #1e3a5f;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.montre:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(10, 22, 40, 0.2);
+    border-top-color: #c9a84c;
+}
+
+.montre img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.montre-info {
+    padding: 1.5rem;
+}
+
+.montre-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #0a1628;
+}
+
+.marque {
+    font-size: 0.9rem;
+    color: #1e3a5f;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.prix {
+    font-weight: 700;
+    color: #1e3a5f;
+    font-size: 1.1rem;
+}
+
+/* À propos */
+.about-content {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-image {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(10, 22, 40, 0.2);
+    border: 4px solid #1e3a5f;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contact */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(10, 22, 40, 0.1);
+    border-top: 4px solid #1e3a5f;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #0a1628;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #b0c4de;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1e3a5f;
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+footer {
+    background: #0a1628;
+    color: #b0c4de;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 3px solid #c9a84c;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.social-links li {
+    margin: 0 1rem;
+}
+
+.social-links a {
+    color: #b0c4de;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #c9a84c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .galerie {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
