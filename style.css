@@ -70,8 +70,8 @@ body::before {
 /* === EFFET FLUO SUR LES CARTES DE MONTRES === */
 .montre {
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -85,8 +85,8 @@ body::before {
 /* === ANIMATION FLUO POUR LE HEADER === */
 header {
     background: rgba(10, 22, 40, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
     animation: float 15s ease-in-out infinite;
 }
 
@@ -98,8 +98,8 @@ header {
 /* === EFFET FLUO SUR LE FOOTER === */
 footer {
     background: rgba(10, 22, 40, 0.9);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
 }
 
 
